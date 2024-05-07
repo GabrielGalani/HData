@@ -50,4 +50,4 @@ gold = tratamento_gold.execute()
 if not gold == True: 
     print('Erro no tratamento gold')
 else: 
-    print('Deu tudo certo')
+    print('Pipeline concluido com sucesso!')
