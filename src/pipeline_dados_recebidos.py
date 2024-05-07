@@ -2,22 +2,27 @@ from move_bronze import move_to_bronze
 from tratamento_silver import TratamentoSilverLancamentos
 from tratamento_gold import TratamentoGold
 from datetime import datetime
+from dotenv import load_dotenv
 import os
+import sys
 
+
+# Iniciando dotenv
+load_dotenv()
 # Variaveis globais
 TODAY = datetime.now()
-BASEFOLDER = r'C:\Users\gabri\OneDrive\Documentos\Projetos\HData\Datalake\{stage}\{folder}'
-BASEFOLDER_DOIS = r'C:\Users\gabri\OneDrive\Documentos\Projetos\HData\Datalake\{stage}'
 DATE = TODAY.strftime('%Y_%m_%d')
+BASEFOLDER = os.getenv('BASEFOLDER')
 
 
 # variaveis locais
 path_folder = r"C:\Users\gabri\OneDrive\Documentos\Projetos\Case 1 - Dados Fin"
-destination_bronze = BASEFOLDER.format(stage='bronze', folder='dados_recebidos')
-destination_silver = BASEFOLDER.format(stage='silver', folder='dados_recebidos')
+destination_bronze = os.path.join(BASEFOLDER, r'bronze\dados_recebidos')
+destination_silver = os.path.join(BASEFOLDER, r'silver\dados_recebidos')
+destination_gold = os.path.join(BASEFOLDER, r'gold\dados_recebidos')
 file_name = f'dados_recebidos_extractDate={DATE}.csv'
 silver_path_file = os.path.join(destination_silver, file_name)
-destination_gold = BASEFOLDER_DOIS.format(stage='gold')
+
 
 
 ######
