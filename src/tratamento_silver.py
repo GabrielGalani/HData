@@ -174,10 +174,17 @@ class TratamentoSilverLancamentos():
         dataset_lancamento['dt_venc_parcela'] = dataset_lancamento['dt_vencimento']
 
 
+        # Criando sk_conta_bancaria
+        dataset_saldo['sk_conta_bancaria'] = pd.factorize(dataset_saldo['cd_conta_bancaria'])[0] +1
+        dataset_saldo['sk_conta_bancaria'] = dataset_saldo['sk_conta_bancaria'].replace(0, np.nan)
+
+
+        # dataset_lancamento['sk_conta_bancaria'] = pd.factorize(dataset_lancamento['ds_conta_financeira'])[0] +1
+        # dataset_lancamento['sk_conta_bancaria'] = dataset_lancamento['sk_conta_bancaria'].replace(0, np.nan)
+
         # Criando colunas vazias mapeadas no fluxo de caixa
         dataset_lancamento['dt_emissao_nf_doc'] = ''
         dataset_lancamento['dt_inclusao'] = ''
-        dataset_lancamento['sk_conta_bancaria'] = 0
         dataset_lancamento['cd_parcela'] = 0
         dataset_lancamento['vl_juros'] = 0.0
         dataset_lancamento['vl_descontos'] = 0.0
@@ -207,7 +214,7 @@ class TratamentoSilverLancamentos():
                  'dt_emissao_nf_doc',
                  'dt_inclusao',
                  'cd_nf_doc',
-                 'sk_conta_bancaria',
+                #  'sk_conta_bancaria',
                  'cd_parcela',
                  'vl_juros',
                  'vl_descontos',
@@ -256,7 +263,7 @@ class TratamentoSilverLancamentos():
             'dt_emissao_nf_doc': 'datetime64[ns]', 
             'dt_inclusao': 'datetime64[ns]', 
             'cd_nf_doc': object, 
-            'sk_conta_bancaria': int, 
+            # 'sk_conta_bancaria': int, 
             'cd_parcela': int, 
             'vl_juros': float, 
             'vl_descontos': float, 
