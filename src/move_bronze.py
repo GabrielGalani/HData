@@ -28,7 +28,7 @@ def move_to_bronze(path_folder, destination):
 
             # Copiando arquivo
             shutil.copy(path_file, destination_path)
-            print('Arquivo movido com sucesso!')
+            return True
 
 
 if __name__ == "__main__": 

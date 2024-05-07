@@ -24,16 +24,16 @@ class TratamentoSilverLancamentos():
         dataset_cdc = pd.DataFrame()
         dataset_contas = pd.DataFrame()
 
-        for file in os.listdir(folder_path):
+        for file in os.listdir(self.folder_path):
             if file.endswith('xlsx'):
                 # Carrega o arquivo Excel
-                xls = pd.ExcelFile(os.path.join(folder_path,file))
+                xls = pd.ExcelFile(os.path.join(self.folder_path,file))
 
                 # Criando os datasets
-                dataset_lancamento = pd.read_excel(os.path.join(folder_path,file), sheet_name=xls.sheet_names[0])
-                dataset_saldo = pd.read_excel(os.path.join(folder_path,file), sheet_name=xls.sheet_names[1])
-                dataset_cdc = pd.read_excel(os.path.join(folder_path,file), sheet_name=xls.sheet_names[2])
-                dataset_contas = pd.read_excel(os.path.join(folder_path,file), sheet_name=xls.sheet_names[3])
+                dataset_lancamento = pd.read_excel(os.path.join(self.folder_path,file), sheet_name=xls.sheet_names[0])
+                dataset_saldo = pd.read_excel(os.path.join(self.folder_path,file), sheet_name=xls.sheet_names[1])
+                dataset_cdc = pd.read_excel(os.path.join(self.folder_path,file), sheet_name=xls.sheet_names[2])
+                dataset_contas = pd.read_excel(os.path.join(self.folder_path,file), sheet_name=xls.sheet_names[3])
 
         return dataset_saldo, dataset_lancamento, dataset_cdc, dataset_contas
     
@@ -285,6 +285,8 @@ class TratamentoSilverLancamentos():
             Path(self.output_folder).mkdir(parents=True, exist_ok=True)
         
         dataset_final.to_csv(self.output_path, sep='\t')
+
+        return True
 
 if __name__ == "__main__": 
     BASEFOLDER = r'C:\Users\gabri\OneDrive\Documentos\Projetos\Datalake\{stage}\{folder}'
