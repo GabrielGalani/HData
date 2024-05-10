@@ -1,4 +1,4 @@
-sk_unidade	pk_lancamento	cd_lancamento	sk_conta_financeira	dt_vencimento	dt_mes_referencia	vl_total_nf	dt_venc_parcela	sk_fornecedor	dt_realizado	vl_realizado	ds_observacao	dt_emissao_nf_doc	dt_inclusao	cd_nf_doc	sk_conta_bancaria	cd_parcela	vl_juros	vl_descontos	tp_lancamento	sk_normal_centro_custos	tp_forma_pgto	cd_documento	tp_situacao
+sk_unidade	pk_lancamento	cd_lancamento	sk_conta_financeira	dt_vencimento	dt_mes_referencia	vl_total_nf	dt_venc_parcela	sk_fornecedor	dt_realizacao	vl_realizacao	ds_observacao	dt_emissao_nf_doc	dt_inclusao	cd_nf_doc	sk_conta_bancaria	cd_parcela	vl_juros	vl_descontos	tp_lancamento	sk_centro_custos	tp_forma_pgto	cd_documento	tp_situacao
 1	6	6	47	2023-04-28	2023-03-01	15.0	2023-04-28	1	2023-04-01	15.0	Materiais Descartaveis Cozinha			18185	1	0	0.0	0.0		8			PAGO
 1	7	7	71	2023-03-10	2023-03-01	36.53	2023-03-10	2	2023-03-01	36.53	Material de manutencao predial			136874	1	0	0.0	0.0		7			PAGO
 1	8	8	71	2023-03-27	2023-03-01	328.58	2023-03-27	2	2023-03-01	328.58	Material de manutencao predial			137186	1	0	0.0	0.0		3			PAGO

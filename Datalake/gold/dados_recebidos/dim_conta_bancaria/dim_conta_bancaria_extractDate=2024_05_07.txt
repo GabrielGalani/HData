@@ -1,2 +1,0 @@
-sk_conta_bancaria	cd_conta_bancaria	cd_agencia	ds_conta_bancaria	cd_banco	sn_ativo
-1	78956	123	GERAL	1	True
