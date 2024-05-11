@@ -275,7 +275,10 @@ class TratamentoSilverLancamentos():
         }
 
         dataset_final = dataset_final.astype(columns_type)
+        dataset_final['cd_nf_doc'] = dataset_final['cd_nf_doc'].apply(lambda x: x.replace(' ', '').replace('-', '').replace('_', '').replace(';', '').replace('.', '').replace(',', '').zfill(15) if isinstance(x, str) else x)
+        dataset_final['cd_nf_doc'] = dataset_final['cd_nf_doc'].apply(lambda x: str(x)[-10:].rjust(10, '0'))
 
+        
         return dataset_final
 
     def execute(self):

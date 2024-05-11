@@ -7,6 +7,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+
 # Iniciando dotenv
 load_dotenv()
 # Variaveis globais

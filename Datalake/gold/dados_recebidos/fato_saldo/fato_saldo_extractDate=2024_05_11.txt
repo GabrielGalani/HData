@@ -1,0 +1,2 @@
+dt_saldo_inicial	vl_saldo_inicial	sk_conta_bancaria
+2023-01-01	2238863.82	1
